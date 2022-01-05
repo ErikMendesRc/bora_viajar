@@ -49,15 +49,24 @@ class _HomeScreenState extends State<HomeScreen> {
               addVerticalSpace(padding),
               Padding(
                 padding: sidePadding,
-                child: Text("Cidade", style: themeData.textTheme.bodyText2,),
+                child: Text("Eaí! Bora Viajá?", style: themeData.textTheme.bodyText2,),
               ),
               addVerticalSpace(10),
               Padding(
                 padding: sidePadding,
-              child: Text(
-                "Proximo de Rio Claro",
-                style: themeData.textTheme.headline6,
+              child: TextField(
+                style: TextStyle(color: COLOR_GREY),
+                cursorColor: COLOR_GREY,
+                decoration: InputDecoration(
+                  hintText: "Buscar Excurções",
+                  hintStyle: const TextStyle(color: COLOR_BLACK),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+                  prefixIcon: const Icon(
+                    Icons.search,
+                    color: COLOR_GREY,
+                  ),
                 ),
+              )
               ),
               Padding(
                 padding: sidePadding,
@@ -71,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    "Perto de voce","Litoral", "Interior", "Com vagas"]
+                    "Perto de você","Litoral", "Interior", "Com vagas"]
                     .map((filter) => FilterOptions(text: filter)).toList(),
                 ),
               ),

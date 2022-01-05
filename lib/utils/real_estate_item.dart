@@ -47,12 +47,11 @@ class RealEstateItem extends StatelessWidget {
           ),
           addVerticalSpace(10),
           Text(
-            "${itemData["vagasrestantes"]} vagas disponiveis / ${itemData["hostel"]}",
+            "${itemData["vagasrestantes"]} vagas disponiveis / Hospedagem: ${itemData["hostel"]}",
             style: themeData.textTheme.bodyText2
           )
         ],
       ),
-      
     );
   }
 }
