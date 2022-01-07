@@ -1,4 +1,6 @@
+import 'package:bora_viajar/utils/ItemScreen%20Utils/info_item.dart';
 import 'package:bora_viajar/views/HomeScreen.dart';
+import 'package:bora_viajar/views/ItemScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Bora Viajá?',
+      title: 'Bora Viajar?',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const ItemScreen(),
     );
   }
 }

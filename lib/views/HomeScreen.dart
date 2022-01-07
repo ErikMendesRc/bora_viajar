@@ -7,7 +7,7 @@ import 'package:bora_viajar/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -33,55 +33,59 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: sidePadding,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                     BorderBox(
-                      child: Icon(Icons.menu, color: COLOR_BLACK),
-                      height: 50, 
-                      width: 50),
-                     BorderBox(
-                      child: Icon(Icons.settings, color: COLOR_BLACK),  
-                      height: 50, 
-                      width: 50),
-                  ]
-                ),
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      BorderBox(
+                          child: Icon(Icons.menu, color: COLOR_BLACK),
+                          height: 50,
+                          width: 50),
+                      BorderBox(
+                          child: Icon(Icons.settings, color: COLOR_BLACK),
+                          height: 50,
+                          width: 50),
+                    ]),
               ),
               addVerticalSpace(padding),
               Padding(
                 padding: sidePadding,
-                child: Text("Eaí! Bora Viajá?", style: themeData.textTheme.bodyText2,),
+                child: Text(
+                  "Eaí! Bora Viajá?",
+                  style: themeData.textTheme.bodyText2,
+                ),
               ),
               addVerticalSpace(10),
               Padding(
-                padding: sidePadding,
-              child: TextField(
-                style: TextStyle(color: COLOR_GREY),
-                cursorColor: COLOR_GREY,
-                decoration: InputDecoration(
-                  hintText: "Buscar Excurções",
-                  hintStyle: const TextStyle(color: COLOR_BLACK),
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    color: COLOR_GREY,
-                  ),
-                ),
-              )
-              ),
+                  padding: sidePadding,
+                  child: TextField(
+                    style: TextStyle(color: COLOR_GREY),
+                    cursorColor: COLOR_GREY,
+                    decoration: InputDecoration(
+                      hintText: "Buscar Excurções",
+                      hintStyle: const TextStyle(color: COLOR_BLACK),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.0)),
+                      prefixIcon: const Icon(
+                        Icons.search,
+                        color: COLOR_GREY,
+                      ),
+                    ),
+                  )),
               Padding(
-                padding: sidePadding,
-                child: const Divider(
-                  height:padding,
-                  color: COLOR_GREY,
-                )
-              ),
+                  padding: sidePadding,
+                  child: const Divider(
+                    height: padding,
+                    color: COLOR_GREY,
+                  )),
               addVerticalSpace(10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    "Perto de você","Litoral", "Interior", "Com vagas"]
-                    .map((filter) => FilterOptions(text: filter)).toList(),
+                    "Perto de você",
+                    "Litoral",
+                    "Interior",
+                    "Com vagas"
+                  ].map((filter) => FilterOptions(text: filter)).toList(),
                 ),
               ),
               addVerticalSpace(10),
@@ -90,10 +94,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: sidePadding,
                   child: ListView.builder(
                     itemCount: RE_DATA.length,
-                    itemBuilder: (context, index){
+                    itemBuilder: (context, index) {
                       return RealEstateItem(itemData: RE_DATA[index]);
                     },
-                    ),
+                  ),
                 ),
               ),
             ],
